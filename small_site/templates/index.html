@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<p>輸入要查詢的股票代碼</p>
+    <form action="/price" method="post">
+        <label for="group_name">股票代碼：</label>
+        <input type="text" name="stock_id">
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}

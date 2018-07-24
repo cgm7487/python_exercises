@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}股價結果{% endblock title %}
+
+{% block content %}
+<h1>最新一筆股價</h1>
+<p>股票代碼: {{stock_id}}</p>
+<p>日期: {{data_date}}</p>
+<p>開盤價: {{start_price}}</p>
+<p>收盤價: {{final_price}}</p>
+<input name="Submit" type="button" id="Submit" onClick="javascript:history.back(1)" value="回上一頁" />
+{% endblock content %}
