@@ -4,7 +4,7 @@ import time
 
 class test_thread(Thread):
     def __init__(self, q):
-        super().__init__()
+        super(test_thread, self).__init__()
         self.q = q
         self.stop_event = Event()
     def run(self):
