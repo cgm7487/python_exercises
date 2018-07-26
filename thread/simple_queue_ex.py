@@ -20,7 +20,7 @@ class test_thread(Thread):
     def join(self, timeout=None):
         print("thread join")
         self.stop_event.set()
-        Thread.join(self, timeout)
+        super(test_thread, self).join(timeout)
 
 q = queue.Queue(10)
 
