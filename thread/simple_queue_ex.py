@@ -4,7 +4,7 @@ import time
 
 class test_thread(Thread):
     def __init__(self, q):
-        super(test_thread, self).__init__()
+        super().__init__()
         self.q = q
         self.stop_event = Event()
     def run(self):
@@ -20,7 +20,7 @@ class test_thread(Thread):
     def join(self, timeout=None):
         print("thread join")
         self.stop_event.set()
-        super(test_thread, self).join(timeout)
+        super().join(timeout)
 
 q = queue.Queue(10)
 
