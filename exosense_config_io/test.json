@@ -1,0 +1,1 @@
+{"last_edited": "2018-08-22T10:21:34+00:00", "last_editor": "device", "meta": {"description": "create config file by the Python script"}, "channels": {"temp": {"display_name": "temp", "description": "test", "properties": {"data_type": "DYNAMIC_VISCOSITY", "data_unit": "CENTISOKES", "min": 0, "max": 100, "percision": 2}}}}

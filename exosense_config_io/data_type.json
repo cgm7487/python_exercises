@@ -1,0 +1,19 @@
+{
+    "type":
+    [
+        {"STRING":null},
+        {"NUMBER":null},
+        {"JSON":null},
+        {"BINARY":null},
+        {"JSON":null},
+        {"CATEGORICAL":null},
+        {"ACCELERATION":["METER_PER_SEC2"]},
+        {"ANGLE":["RADIAN","DEGREE","ARCMINUTE","ARCSECOND"]},
+        {"ANGULAR_ACCEL":["RAD_PER_SEC2","ROTATIONS_PER_MIN2","DEG_PER_SEC2"]},
+        {"ANGULAR_VEL":["RAD_PER_SEC","ROTATIONS_PER_MIN","DEG_PER_SEC"]},
+        {"AREA":["METER2","KILOMETER2","FEET2","INCH2","MILE2"]},
+        {"CAPACITANCE":["FARAD"]},
+        {"DENSITY":["KG_PER_M3"]},
+        {"DYNAMIC_VISCOSITY":["CENTISTOKES","METERS2_PER_SEC"]}
+    ]
+}
