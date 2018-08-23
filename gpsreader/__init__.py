@@ -10,5 +10,3 @@ def get_gps_data(serialInterface, baudrate):
             return "NODATA"
 
         return gpsData
-
-get_gps_data("/dev/ttyS0", 4800)
