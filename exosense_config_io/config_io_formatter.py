@@ -59,7 +59,7 @@ def handle_data_unit(dataConfig, dataType):
                 if v != None:
                     print("Possible unit:\n{}".format("\n".join(v)))
     
-    return input('data unit(optional, enter to leave empty to ignore):')
+    return input('data unit(optional, enter to leave empty to ignore it):')
 
 
 
@@ -67,7 +67,7 @@ def get_channels_setting(dataConfig):
     channels = {}
     channels['last_edited']=datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S+00:00")
     channels['last_editor']='device'
-    channels['meta'] = {'description':'create config file by the Python script'}
+    channels['meta'] = {'description':'create the config file by the Python script'}
 
     channelsVal = {}
     yesFormat = {'yes','y','ye'}
@@ -90,6 +90,13 @@ def get_channels_setting(dataConfig):
         properties['percision'] = int(input('percision:'))
 
         channelVal['properties'] = properties
+
+        #protocolConfig = {}
+
+        #applicatoin = input("application(enter to leave empty to ignore the setting):")
+
+        #if applicatoin !="":
+            
         channelsVal[channelName] = channelVal
 
         isContinue = input('Do you have more channels(yes/NO)?').lower()

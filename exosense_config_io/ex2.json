@@ -1,0 +1,83 @@
+{
+  "last_edited": "2018-03-28T13:27:39+00:00",
+  "last_editor": "user",
+  "meta": {
+    "description": "example config for my device"
+  },
+  "channels": {
+ 		"randomnum" : {
+      "display_name" : "Random Number",
+      "description" : "random generated number",
+      "properties" : {
+        "data_type" : "NUMBER",
+        "min": -100,
+        "max": 100,
+        "precision" : 2
+      }
+    },
+    "pressure1" : {
+      "display_name" : "Pressure 1",
+      "description" : "input pressure for filter",
+      "properties" : {
+        "data_type" : "PRESSURE",
+        "data_unit" : "PSI",
+        "min": 16,
+        "max": 35,
+        "precision" : 2
+      }
+    },
+    "temperature1": {
+      "display_name" : "Temperature 1",
+      "description" : "fluid temperature",
+      "properties" : {
+        "data_type" : "TEMPERATURE",
+        "data_unit" : "DEG_CELSIUS",
+        "min" : 0,
+        "max" : 300,
+        "precision" : 2
+      }
+    }
+  }
+}
+{
+    "last_edited": "2018-03-28T13:27:39+00:00",
+    "last_editor": "user",
+    "meta": {
+      "description": "example config for my device"
+    },
+    "channels": {
+           "randomnum" : {
+        "display_name" : "Random Number",
+        "description" : "random generated number",
+        "properties" : {
+          "data_type" : "NUMBER",
+          "min": -100,
+          "max": 100,
+          "precision" : 2
+        }
+      },
+      "pressure1" : {
+        "display_name" : "Pressure 1",
+        "description" : "input pressure for filter",
+        "properties" : {
+          "data_type" : "PRESSURE",
+          "data_unit" : "PSI",
+          "min": 16,
+          "max": 35,
+          "precision" : 2
+        }
+      },
+      "temperature1": {
+        "display_name" : "Temperature 1",
+        "description" : "fluid temperature",
+        "properties" : {
+          "data_type" : "TEMPERATURE",
+          "data_unit" : "DEG_CELSIUS",
+          "min" : 0,
+          "max" : 300,
+          "precision" : 2
+        }
+      }
+    }
+  }
+  

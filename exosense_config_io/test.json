@@ -1,1 +1,38 @@
-{"last_edited": "2018-08-22T10:21:34+00:00", "last_editor": "device", "meta": {"description": "create config file by the Python script"}, "channels": {"temp": {"display_name": "temp", "description": "test", "properties": {"data_type": "DYNAMIC_VISCOSITY", "data_unit": "CENTISOKES", "min": 0, "max": 100, "percision": 2}}}}
+{
+    "last_edited": "2018-08-23T05:53:06+00:00",
+    "last_editor": "device", 
+    "meta": {
+        "description": "create the config file by the Python script"
+    }, 
+    "channels": {
+        "temperature": {
+            "display_name": "temperature",
+            "description": "This is fake temperature",
+            "properties": {
+                "data_type": "TEMPERATURE", 
+                "data_unit": "DES_CELSIUS", 
+                "min": 0, 
+                "max": 1000, 
+                "percision": 4
+            },
+            "protocol_config": {
+                "application": "ExoSimulator",
+                "report_on_change": false,
+                "report_rate": 10000,
+                "sample_rate": 10000,
+                "mode": "poll",
+                "down_sample": "ACT",
+                "app_specific_config": {
+                    "function": "sin_wave",
+                    "module": "exo_simulator",
+                    "parameters": {
+                        "period": 120,
+                        "amplitude": 10,
+                        "offset": 100,
+                        "precision": 0
+                    }
+                }
+            }
+        }
+    }
+}

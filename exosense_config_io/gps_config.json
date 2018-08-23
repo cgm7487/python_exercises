@@ -1,0 +1,31 @@
+{
+    "last_edited": "2018-08-23T09:20:06+00:00", 
+    "last_editor": "device", 
+    "meta": {
+        "description": "create the config file by the Python script"
+    }, 
+    "channels": {
+        "gps": {
+            "display_name": "gps data", 
+            "description": "Complete GPS Data", 
+            "properties": {
+                "data_type": "STRING", 
+                "min": 0, 
+                "max": 256, 
+                "percision": 0
+            },
+            "protocol_config": {
+                "application": "Custom Application",
+                "sample_rate": 60000,
+                "mode": "poll",
+                "app_specific_config": {
+                  "module": "gpsreader",
+                  "function": "get_gps_data",
+                  "parameters": {
+                    "serialInterface": "/det/tty/USB0",
+                    "baudrate": 4800
+                  }
+            }
+        }
+    }
+}
