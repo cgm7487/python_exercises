@@ -42,5 +42,9 @@ def price():
             final_price = str(result[3])
         )
 
+@app.route('/map')
+def mymap():
+        return render_template('my_map.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
