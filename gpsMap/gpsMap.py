@@ -1,6 +1,6 @@
 from flask import Flask, g, render_template, request
-import gpsreader
 from gmplot import gmplot
+import gpsreader
 
 app = Flask(__name__)
 
@@ -12,7 +12,7 @@ def generateMapHtml(lat, lon, myMap):
     gmap.marker(lat, lon, 'cornflowerblue')
 
     # Draw
-    gmap.draw(myMap)
+    gmap.draw('templates/'+myMap)
 
 @app.route('/')
 def index():
@@ -25,7 +25,7 @@ def showMap():
         gpsList = gpsAll.split(',')
         lat = float(gpsList[2])/100 if gpsList[3] == 'N' else -1 * float(gpsList[2])/100
         lon = float(gpsList[4])/100 if gpsList[5] == 'E' else -1 * float(gpsList[4])/100
-        myMap = 'templates/map.html'
+        myMap = 'map.html'
         generateMapHtml(lat,lon,myMap)
         return render_template(myMap)
 
