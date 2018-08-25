@@ -1,13 +1,15 @@
 from flask import Flask, g, render_template, request
 from gmplot import gmplot
 import gpsreader
+import math
 
 app = Flask(__name__)
 
 def generateMapHtml(lat, lon, myMap):
 
     # Place Map
-    gmap = gmplot.GoogleMapPlotter(lat,lon,13)
+    gmap = gmplot.GoogleMapPlotter(lat,lon,20)
+
     # Marker
     gmap.marker(lat, lon, 'cornflowerblue')
 
@@ -23,8 +25,15 @@ def showMap():
     gpsAll = gpsreader.get_gps_data('/dev/ttyUSB0', 4800)
     if gpsAll != 'NODATA':
         gpsList = gpsAll.split(',')
-        lat = float(gpsList[2])/100 if gpsList[3] == 'N' else -1 * float(gpsList[2])/100
-        lon = float(gpsList[4])/100 if gpsList[5] == 'E' else -1 * float(gpsList[4])/100
+
+        latTemp = math.modf(float(gpsList[2])/100)
+        latNoDir = latTemp[1]+(latTemp[0]*100.0/60.0)
+        lat = latNoDir if gpsList[3] == 'N' else -1 * latNoDir
+
+        lonTemp = math.modf(float(gpsList[4])/100)
+        lonNoDir = lonTemp[1]+(lonTemp[0]*100.0/60.0)
+        lon = lonNoDir if gpsList[5] == 'E' else -1 * lonNoDir
+
         myMap = 'map.html'
         generateMapHtml(lat,lon,myMap)
         return render_template(myMap)
