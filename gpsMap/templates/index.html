@@ -6,9 +6,26 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
+    
+    <script>
+        $("form").submit(function(e) {
+          e.preventDefault();
+          $.ajax({
+            url: "/map",
+            data: {...},
+            type: "GET", // if you want to send data via the "data" property change this to "POST". This can be omitted otherwise
+            success: function(responseData) {
+            },
+            error: console.error
+          });
+        });
+      </script>
+
     <body>
 
         <p>Try map endpoint to show the map</p>
-
+        <form name="form">
+            <input type="submit" onclick="javascript: form.action='/map';" value="Generate the Map">
+        </form>
     </body>
 </html>
