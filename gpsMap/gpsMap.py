@@ -23,8 +23,14 @@ def index():
 @app.route('/map')
 def showMap():
     gpsAll = gpsreader.get_gps_data('/dev/ttyUSB0', 4800)
+
+    print(gpsAll)
+
     if gpsAll != 'NODATA':
         gpsList = gpsAll.split(',')
+
+        if int(gpsList[6]) == 0:
+            return "NO GPS Data"
 
         latTemp = math.modf(float(gpsList[2])/100)
         latNoDir = latTemp[1]+(latTemp[0]*100.0/60.0)
