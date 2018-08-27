@@ -1,0 +1,7 @@
+setup.py
+gpsreader/__init__.py
+gpsreader.egg-info/PKG-INFO
+gpsreader.egg-info/SOURCES.txt
+gpsreader.egg-info/dependency_links.txt
+gpsreader.egg-info/requires.txt
+gpsreader.egg-info/top_level.txt
