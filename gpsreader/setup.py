@@ -5,7 +5,7 @@ REQUIREMENTS = ['pyserial']
 setup(name='gpsreader',
       author = "cgm",
       author_email = "cgm7487@gmail.com",
-      version = '1.0',
+      version = '1.1',
       packages=find_packages(),
       install_requires=REQUIREMENTS
       )
