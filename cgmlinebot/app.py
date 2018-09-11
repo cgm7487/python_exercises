@@ -12,6 +12,9 @@ from linebot.models import (
 )
 
 import os
+import redis
+
+r = redis.from_url(os.environ.get("REDIS_URL"))
 
 app = Flask(__name__)
 
@@ -37,8 +40,17 @@ def callback():
     return 'OK'
 
 
+def get_counter_value():
+    counter = r.get('counter')
+    counter = 0 if counter == None else counter
+    
+    return int(counter)
+
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+
+    counter = 0
 
     showMsg = ''
     recvMsg = event.message.text
@@ -56,10 +68,20 @@ def handle_message(event):
             line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(text="Bot can't use profile API without user ID"))
+
     elif recvMsg.upper() == "HI".upper():
         showMsg = "Who are you?"
+
     elif recvMsg.upper() == 'HUEI'.upper():
         showMsg = "Tonight's moon is beautiful"
+        
+        counter = get_counter_value()
+        counter+=1
+        r.set('counter', counter)
+        
+    elif recvMsg.upper() == 'show counter'.upper():
+        showMsg = 'counter: %d'%get_counter_value()
+
     else:
         showMsg = "Hi, " + recvMsg 
 
